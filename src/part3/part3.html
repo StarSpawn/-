@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空难数据统计</title>
+    <style>
+        div.containerUp{
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+            background-color: #031d33;
+            
+        }
+        div#high-left{
+            width: 25%;
+            height: 480px;
+            background-color: #031d33;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        div.wordCloudTitle{
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-weight: bolder;
+            font-size: large;
+        }
+
+        div#wordCloudItem{
+            width: 100%;
+            height: 440px;
+        }
+
+        div.effect {
+            border:2px solid #4c99de;
+            border-radius:25px;
+        }
+        
+        div#map{
+            width: 50%;
+            height: 480px;
+            background-color: #031d33;
+        }
+        div#information{
+            width: 25%;
+            height: 480px;
+            background-color: #031d33;
+            display: flex;
+            flex-direction:column;
+            align-items:center;
+            /* justify-content:center;  */
+
+        }
+
+        div#planepic{
+            width: 300px;
+            height: 215px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        img#planepic1{
+            width: 100%;
+            height: 100%;
+        }
+
+        div.inf{
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        div.containerDown{
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+            background-color: #031d33;
+        }
+
+        div#downleft{
+            width: 25%;
+            height: 500px;
+            background-color: #031d33;
+        }
+
+        div#downcenter{
+            width: 50%;
+            height: 500px;
+            background-color: #031d33;
+        }
+
+        div#downright{
+            width: 25%;
+            height: 500px;
+            background-color: #031d33;
+            overflow: visible;
+        }
+
+    </style>
+    <script src="../../js/echarts.js"></script>
+    <script src="../../map/js/world.js"></script>
+    <script src="../../js/echart3.js"></script>
+    <script src="../../js/echarts-wordcloud.js"></script>
+    <script src="../../js/part3.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+</head>
+<body>
+    <div class="header">
+        <div class="tr">
+         <ul class="ur">
+            <li><a href="../part1/PART1.html">东航之殇</a></li>
+            <li><a href="../part2/main.html">追寻真相的苦旅</a></li>
+            <li><a href="../part3/part3.html">航空事故统计</a></li>
+            <li><a href="../part4/part4.html">安全性的事实</a></li>
+         </ul>
+     </div>
+    </div>
+
+    <div class="containerUp">
+        <div id="high-left" class="effect">
+            <div class="wordCloudTitle">1950-2010致命空难原因词云图</div>
+            <div id="wordCloudItem"><script>getWordCloud();</script></div>
+        </div>
+
+        <div id="map" class="effect">
+            <script>getMap();</script>
+        </div>
+
+        <div id="information" class="effect">
+            <div id="planepic"><img id="planepic1" src="../../img/part3/start.png" alt=""></div>
+            <div class="inf">时间：<span id="time">待选</span></div>
+            <div class="inf">航班编号：<span id="Id">待选</span></div>
+            <div class="inf">机型：<span id="type">待选</span></div>
+            <div class="inf">死亡人数(含地面死亡人员)：<span id="number">待选</span></div>
+            <div class="inf">坠毁地点(纬度,经度)：</div>
+            <span id="lng-lat" style="color: #fff;">待选</span>
+        </div>
+
+    </div>
+
+    <div class="containerDown" >
+        <div id="downleft" class="effect">
+            <script>getCategory2();</script>
+        </div>
+
+        <div id="downcenter" class="effect">
+            <script>getCategory();</script>
+        </div>
+
+        <div id="downright" class="effect">
+            <script>getPie();</script>
+        </div>
+    </div>
+   
+</body>
+
+</html>
+   

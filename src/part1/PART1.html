@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../css/part1.css">
+</head>
+<body>
+    <div class="header">
+        <div class="tr">
+         <ul class="ur">
+            <li><a href="../part1/PART1.html">东航之殇</a></li>
+            <li><a href="../part2/main.html">追寻真相的苦旅</a></li>
+            <li><a href="../part3/part3.html">航空事故统计</a></li>
+            <li><a href="../part4/part4.html">安全性的事实</a></li>
+         </ul>
+     </div>
+    </div>
+       
+    <div class="mainContainer">
+        <div class="text">
+            <div class="text-head">
+                <h1 id="title">事件回顾</h1>
+            </div>
+            <div class="text-content">
+                <p id="text" style="font-size: large;"><br><br><br>
+                本篇使用数据可视化的方式回顾东航坠机事件
+                <br><br><br><br>
+                选择下方选项查看详情</p>
+            </div>
+        </div>
+        <div id="table">
+
+        </div>
+    </div>
+
+    <div class="switch">
+        <div class="switchButton" id="1" onclick="showTxt(0), showEchart1()">
+            <div class="b1"></div>    
+            <h2>坠机发生</h2>
+        </div>
+        <div class="switchButton" id="2" onclick="showTxt(1), showEchart2()">
+            <div class="b1"></div>
+            <h2>救援力量集结</h2></div>
+        <div class="switchButton" id="3" onclick="showTxt(2), showEchart3()">
+            <div class="b1"></div>
+            <h2>调查时间线</h2></div>
+        <div class="switchButton" id="4" onclick="showTxt(3), showEchart4()">
+            <div class="b1"></div>
+            <h2>初步报告</h2></div>
+    </div>
+    <script src="../../js/echart3.js"></script>
+    <script src="../../js/echarts-wordcloud.js"></script>
+    <script src="../../js/textSwitch.js"></script>
+    <script src="../../js/echarts.js"></script>
+    <script src="../../js/part1-echarts.js"></script>
+</body>
+</html>

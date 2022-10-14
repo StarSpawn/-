@@ -1,0 +1,83 @@
+
+        div.mainContainer{
+            width: 100%;
+            height: 500px;
+            display: flex;
+            flex-direction: row;
+            justify-content:left;
+            background-color: black;
+            background-image:url('../img/part1/bimg.jpg');
+            background-repeat: no-repeat;
+            background-position: top right;
+        }
+
+        
+        div.text{
+            width: 450px;
+            height:500px;
+            margin-left: 80px;
+            display: flex;
+            justify-content:center;
+            flex-direction: column;
+            text-align: center;
+            color: brown;
+        }
+        div.text-head{
+            width: 450px;
+            margin-top: 100px 0 40px 0;
+            height:60px;
+
+        }
+        div.text-content{
+            width: 450px;
+            height: 200px;
+
+        }
+
+        div#table{
+            width: 800px;
+            height: 430px;
+            margin: 50px 0 20px 30px;
+        }
+
+        div.switch{
+            width: 100%;
+            height: 155px;
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+            background-color: black;
+        }
+
+
+        div.switchButton{
+            width: 160px;
+            height: 100px;
+            background-color: #fff;
+            margin: 30px 100px 30px 100px;
+            text-align: center;
+            line-height:100px;
+            /* 特效 */
+            overflow:hidden;
+            position: relative;
+            transition: all .2s;
+        }
+
+        div.b1{
+            position: absolute;
+            left: -110%;
+            top: 0;
+            width: 160px;
+            height: 100px;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+        }
+
+        div.switchButton:hover div.b1 {
+            left: 110%;
+            transition: all .3s;
+        }
+
+        div.switchButton:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
+        }
