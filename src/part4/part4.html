@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安全性的事实</title>
+    <title>安全依旧的飞行</title>
     <link rel="stylesheet" href="../part2/二级页面配置相关配置/css/common.css" />
 	<link rel="stylesheet" type="text/css" href="../part2/二级页面配置相关配置/css/works.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/header.css">
@@ -12,59 +12,63 @@
     <script src="../../js/echarts.js"></script>
     <script src="../../js/part4.js"></script>
     <style>
-        div.content{
-            width: 100%;
-            display: flex;
-            margin: 0;
-            
+       div.head{
+        background-image: url('../../img/part4/bbgi2.png');
+       }
+       .t2{width: 550px;}
+       .tt{
+        width: 550px;
+        margin: 150px auto;}
+        div.switch{
+            margin: 0 200px;
+            height: 140px;
         }
-        div.leftcontent{
-            width: 25%;
-            height: 100%;
-            background-color: gray;
-            display: flex;
-            flex-direction: column;
-            line-height: 92.4px;
-            font-size: larger;
-            overflow: hidden;
+        div.tag:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
         }
-
         div.tag{
-            width: 100%;
-            height: 25%;
-            background-color: gray;
+            width: 200px;
+            height: 80px;
+            margin: 30px;
+            background-color:rgb(207, 72, 72);
             color: white;
+            float: left;
             text-align: center;
-            box-sizing: border-box;
-            border: 1px solid black;
-        }        
-
-        div.rightcontent{
-            width: 75%;
-            height: 100%;
-            background-color:orange;
+            line-height: 80px;
+            font-weight: bold;
+            /* 特效 */
+            overflow:hidden;
+            position: relative;
+            transition: all .2s;
         }
+        div.content{
+            width:50%;
+            height:800px;
+            /* background-color:bisque; */
+            margin: 30px auto;
+            line-height: 40px;
+            font-family: STSong;
+            font-weight: bold;
 
-        div.part{
+        }
+        .part{
+            height: 100%;
             width: 100%;
-            height: 100%;
-            background-color:orange;
-            display: flex;
-            flex-direction: column;
-            /* justify-content:center; */
-            align-items:center;
-            color: black;
-            font-size: larger;
-            overflow: scroll;
         }
-
-        div.part p{
-            margin: 35px 0 10px 0;
+        div.charts{
+            height: 400px;
+            width: 100%;
         }
-
-        div.part img{
-            width: 800px;
-            height: 600px;
+        .p2img,.p3img{
+            display: block;
+            margin: 0px auto;
+            padding-top: 15px;
+        }
+        .p3img{
+            width: 700px;
+            height: 500px;
+            padding-bottom: 15px;
         }
 
     </style>
@@ -78,68 +82,64 @@
                     <li><a href="../part1/PART1.html">东航之殇</a></li>
                     <li><a href="../part2/main.html">追寻真相的苦旅</a></li>
                     <li><a href="../part3/part3.html">航空事故统计</a></li>
-                    <li><a href="../part4/part4.html">安全性的事实</a></li>
+                    <li><a href="../part4/part4.html">安全依旧的飞行</a></li>
                  </ul>
              </div>
             </div>
 			
 			<div class="tt">
-				<div class="t2">安全性的事实</div>
+				<div class="t2">安全依旧的飞行</div>
 				<!-- <div class="t3">Article | 生活</div> -->
 			</div>
 		</div>
-		<div class="content">
-			<div class="leftcontent">
-                <div class="tag" id="1" onclick="clickSwitch(this);">概述</div>
-                <div class="tag" id="2"  onclick="clickSwitch(this);getecharts1()" >不同交通方式事故率对比</div>
-                <div class="tag" id="3" onclick="clickSwitch(this);getecharts2()">乘客卷入致命事故的几率</div>
-                <div class="tag" id="4" onclick="clickSwitch(this);">全方位的飞行安全保障</div>
-                <div class="tag" id="5" onclick="clickSwitch(this);">尾声</div>
-            </div>
-            <div class="rightcontent">
-                <div class="part" id="Partid1" style="display: flex;">
-                    <p>空难发生后，“飞机是否是最安全的交通工具”这一话题引发网友热议。</p>
-                    <p>比较飞机的安全性，最常用的是比较不同交通工具的事故风险。</p>
-                    <p>当然我们也可以统计乘客卷入致命事故的概率来说明飞机的安全性。</p>
-                    <p>此外我们将基于飞机的设计与飞行保障支持来对民航的安全性做出补充说明</p>
-                    <p>在此部分的最后，有着我们对这个作品想法与期望，这也是我们选择了这个主题的重要原因。</p>
-                </div>
-                <div class="part" id="Partid2" style="display: none;"></div>
-                <div class="part" id="Partid3" style="display: none;"></div>
-                <div class="part" id="Partid4" style="display: none;">
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了满足适航要求和安全指标，设计师对飞机要进行冗余设计，同一个功能的系统要设计多套备份设备，当一套设备发生故障时，备用设备可以正常的满足飞机的功能。工程师还要对飞机进行结构强度、环境与可靠性等多种地面试验，对飞机的各个系统进行测试，经历数百项的试飞验证，最后取得适航认证，交付给客户使用。</p>
-                    <img src="../../img/part4/2.png" alt="">
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除此之外，飞机的安全运行是多部门协同保障进行的。飞行员要有足够的经验，经过严格的筛选，反复的培训；同时，地面上还要有指挥，调度；线路固定，飞机也有航线。飞机的安全优势在于更加先进的设备，更优秀的人员，更全面的检查等。</p>
-                    <img src="../../img/part4/1.png" alt="">
-                    <p>整体而言，当下航空旅行的安全性正逐年提高。根据国际航空运输协会发布的《2020年航空运输安全报告》，2020年航空旅行的致命风险平均值为0.13，即若一名旅客每天都搭乘飞机旅行，461年才可能遭遇到一次致命事故。</p>
-                    <p>这一系列的数据可以告诉我们，飞机依旧是安全的出行方式。尽管发生了一次悲剧性的事件，但是我们仍要相信航空出行有着强大且完善的安全保障系统。</p>
-                </div>
-                <div class="part" id="Partid5" style="display: none;">
-                    <p>空难在每年亿万次飞行中终究不可避免，</p>
-                    <p>但是我们所能做的是对事故进行科学分析，提升之后的飞行安全性，从而减少损失。</p>
-                    <p>其中，起到关键性作用的空难调查是个系统性的复杂的工程，</p>
-                    <p>需要材料、气象、心理等多方面人才的参与。</p>
-                    <p>绝非坐在电脑前，臆造事实，发布一些毫无科学依据的文章夺人眼球。</p>
-                    <p>只有多加学习航空知识，我们才能更深入了解民航，</p>
-                    <p>懂得如何尽可能客观看待事故，理解空难调查的艰辛，</p>
-                    <p>也能学会尊重逝者，尊重事实。</p>
-                    <p style="font-weight: bolder;">愿世界少一分空难，多一分安宁。</p>
-                </div>
-            </div>
-		</div>
+		
+        <div class="switch">
+            <div class="tag" id="2" onclick="clickSwitch(this);">民航安全程度一览</div>
+            <div class="tag" id="3" onclick="clickSwitch(this);getecharts1();getecharts2()">航空安全性的事实</div>
+            <div class="tag" id="4" onclick="clickSwitch(this);">全方位的飞行安全保障</div>
+            <div class="tag" id="5" onclick="clickSwitch(this);">尾声</div>
+        </div>
 
+        <div class="content">
+            <div class="part" id="Partid2" style="display: block;">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国际航空运输协会（IATA）发布2021年商用航空安全指标数据，多个指标与2020年和2017-2021五年平均值相比，有显著改善。事故总数、总事故率和死亡人数减少。15年来，首次无跑道/滑行道偏离事故。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总体而言，航空行业在几个关键的安全指标上有所改善，事故率与飞机损毁率始终保持在了较低的水平上。在民航业严格的安全标准下，近年来平均每81万次飞行才会发生一次事故，而这相较于每年千万级别的航班总量无疑是非常之低的。</p>
+                <img src="../../img/part4/3.png" alt="" class="p2img" style="margin:0 auto ;">
+            </div>
+            <div class="part" id="Partid3" style="display: none;">
+            <div class="charts" id="c1"></div>
+            <div class="charts" id="c2"></div>
+            </div>
+            <div class="part" id="Partid4" style="display: none;">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了满足适航要求和安全指标，设计师对飞机要进行冗余设计，同一个功能的系统要设计多套备份设备，当一套设备发生故障时，备用设备可以正常的满足飞机的功能。工程师还要对飞机进行结构强度、环境与可靠性等多种地面试验，对飞机的各个系统进行测试，经历数百项的试飞验证，最后取得适航认证，交付给客户使用。</p>
+                <img src="../../img/part4/2.png" alt="" class="p3img">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除此之外，飞机的安全运行是多部门协同保障进行的。飞行员要有足够的经验，经过严格的筛选，反复的培训；同时，地面上还要有指挥，调度；线路固定，飞机也有航线。飞机的安全优势在于更加先进的设备，更优秀的人员，更全面的检查等。</p>
+                <img src="../../img/part4/1.png" alt="" class="p3img">
+            </div>
+            <div class="part" id="Partid5" style="display: none;text-align: center;">
+                <p>空难在每年亿万次飞行中终究不可避免，</p>
+                <p>但是我们所能做的是对事故进行科学分析，提升之后的飞行安全性，从而减少损失。</p>
+                <p>其中，起到关键性作用的空难调查是个系统性的复杂的工程，</p>
+                <p>需要材料、气象、心理等多方面人才的参与。</p>
+                <p>绝非坐在电脑前，臆造事实，发布一些毫无科学依据的文章夺人眼球。</p>
+                <p>只有多加学习航空知识，我们才能更深入了解民航，</p>
+                <p>懂得如何尽可能客观看待事故，理解空难调查的艰辛，</p>
+                <p>也能学会尊重逝者，尊重事实。</p>
+                <p style="font-weight:900;font-size:x-large;">愿世界少一分空难，多一分安宁。</p>
+            </div>
+        </div>
 </body>
 
 <script type="text/javascript">
 
-    var nowpage = "1"
+    var nowpage = "2"
 
     function clickSwitch(e){
         document.getElementById('Partid'+nowpage).style.display = "none";
         console.log('Partid'+nowpage)
         nowpage = e.id;
         console.log('Partid'+nowpage)
-        document.getElementById('Partid'+nowpage).style.display = "flex";
+        document.getElementById('Partid'+nowpage).style.display = "block";
     }
 </script>
 

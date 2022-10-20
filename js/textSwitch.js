@@ -18,5 +18,7 @@ function showTxt(e) {
     document.getElementById("text").innerHTML = txtData[e];// modify the content 
     document.getElementById("text").style.textAlign = "left";
     document.getElementById("text").style.letterSpacing = "1px";
-    document.getElementById("text").style.lineHeight = "1.4" 
+    document.getElementById("text").style.lineHeight = "40px" ;
+    document.getElementById("text").style.fontFamily = "STSong" ;
+    document.getElementById("text").style.fontWeight = "bold" ;
 }

@@ -1,5 +1,5 @@
 function getecharts1(){
-    var dom = document.getElementById("Partid2");
+    var dom = document.getElementById("c1");
 var myChart = echarts.init(dom);
 var app = {};
 
@@ -10,7 +10,7 @@ var option;
 option = {
   title: [
     {
-      text: '各种交通方式事故率对比'
+      text: '不同交通方式每10亿名旅客里程数死亡人数'
     }
   ],
   polar: {
@@ -43,7 +43,7 @@ if (option && typeof option === 'object') {
 }
 
 function getecharts2(){
-    var dom = document.getElementById("Partid3");
+    var dom = document.getElementById("c2");
 var myChart = echarts.init(dom);
 var app = {};
 
@@ -67,7 +67,7 @@ let barData = {
 option = {
             backgroundColor: 'rgba(0,0,0,0)',
             title: {
-                text: '单位  %',
+                text: '不同航司',
                 textStyle: {
                     fontSize: 12,
                     fontWeight: 'normal',

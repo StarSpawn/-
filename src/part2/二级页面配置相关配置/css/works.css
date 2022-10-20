@@ -9,6 +9,9 @@
 				height: 462px;
 				margin: 0px auto;
 				margin-bottom: 50px;
+				line-height: 40px;
+				font-family: STSong;
+				font-weight: bold;
 			}
 			.title{
 				font-family: "微软雅黑";
